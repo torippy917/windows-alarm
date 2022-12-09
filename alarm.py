@@ -6,12 +6,12 @@ time_alarm = datetime.time(20, 40, 0, 0)
 play_dtime = datetime.timedelta(minutes=5)
 
 def main():
+    while datetime.datetime.now().time() <= time_alarm:
+        time.sleep(1)
+    
     mixer.init()
     sound_music = mixer.Sound("music.mp3")
     sound_voice = mixer.Sound("voice.mp3")
-
-    while datetime.datetime.now().time() <= time_alarm:
-        time.sleep(1)
 
     sound_music.play(-1)
     sound_voice.play()
