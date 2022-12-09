@@ -20,5 +20,8 @@ def main():
 
     mixer.fadeout(5000)
 
+    while mixer.get_busy():
+        time.sleep(1)
+
 if __name__ == "__main__":
     main()
